@@ -1,0 +1,24 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">Pendaftaran</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message %>
+          </div>
+        <% end %>
+        
+        <%= form_tag("/users/create") do %>
+          <p>Nama</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>Email</p>
+          <input name="email" value="<%= @user.email %>">
+          <p>Kata Kunci</p>
+          <input type="password" name="password" value="<%= @user.password %>">
+          <input type="submit" value="Daftar">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
